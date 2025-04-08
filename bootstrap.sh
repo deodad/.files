@@ -1,8 +1,8 @@
-# Installs sds/.files configuration on what is assumed to be a brand-new machine.
+# Installs deodad/.files configuration on what is assumed to be a brand-new machine.
 #
 # Execute by running:
 #
-#   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/sds/.files/HEAD/bootstrap.sh)"
+#   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/deodad/.files/HEAD/bootstrap.sh)"
 
 # Halt on first failed command
 set -e
@@ -45,13 +45,13 @@ EOF
 export PATH="/opt/homebrew/bin:$PATH"
 
 # Clone repo. Use HTTPS since we don't have SSH set up yet
-git clone https://github.com/sds/.files.git ~/.files
+git clone https://github.com/deodad/.files.git ~/.files
 
 cd ~/.files
 
 # Switch repo to use SSH going forward (we'll have SSH set up soon)
 git remote remove origin >/dev/null 2>&1
-git remote add origin git@github.com:sds/.files
+git remote add origin git@github.com:deodad/.files
 
 # Replace this script with the install script and execute it
 exec ./install

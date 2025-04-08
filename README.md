@@ -7,7 +7,7 @@ At the time of this decision, a rewrite of fish in Rust is [nearing completion](
 While that's nice, it's not the main reason.
 
 The goal with this was simplification:
-- Removed the [Dot framework](https://github.com/sds/dot) for configuration management since it was overengineered relative to what I personally needed.
+- Removed the [Dot framework](https://github.com/deodad/dot) for configuration management since it was overengineered relative to what I personally needed.
 - Fish is much easier to configure than zsh, and has an excellent suite of autocompletions already provided.
 - Migrating from [Vim](https://www.vim.org/) to [Neovim](https://neovim.io/) was on my list for a while, as most activity is happening on Neovim now.
 - Migrating from [iTerm2](https://iterm2.com/) to [Ghostty](https://ghostty.org/), which has fewer knobs to tweak and is seeing much more active development.
@@ -17,7 +17,7 @@ The goal with this was simplification:
 Assuming you're on a brand-new machine, run:
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/sds/.files/HEAD/bootstrap.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/deodad/.files/HEAD/bootstrap.sh)"
 ```
 
 ## Configuration

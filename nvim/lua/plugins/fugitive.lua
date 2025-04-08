@@ -1,11 +1,7 @@
----@type LazySpec
 return {
-  {
-    "tpope/vim-fugitive",
-    event = "VeryLazy", -- Optional: load lazily when needed
-  },
-  {
-    "tpope/vim-rhubarb",
-    event = "VeryLazy",
-  },
+  'tpope/vim-fugitive',
+  dependencies = 'tpope/vim-rhubarb',
+  config = function()
+    vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+  end
 }
