@@ -189,7 +189,9 @@ formula htop
 formula iftop
 
 formula nvim
+formula prettierd
 formula tmux
+formula bun
 formula autojump
 formula lsd
 formula gh
@@ -199,19 +201,19 @@ formula pgcli
 formula orbstack
 formula cloudflared
 formula cocoapods
+formula watchman
 formula direnv
 
-cask zulu
-cask cloudflare-warp
-
+cask ghostty
 cask google-chrome
-cask raycast
 cask 1password
+cask raycast
+cask slack
+cask cloudflare-warp
+cask zulu@17
 cask bartender
 cask cleanshot
 cask istat-menus
-
-cask ghostty
 
 symlink "$HOME/.gnupg/gpg-agent.conf" "$script_dir/gpg-agent.conf"
 symlink "$HOME/.hushlogin" "$script_dir/hushlogin"

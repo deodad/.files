@@ -1,3 +1,39 @@
+###############################################################################
+# Initialize XDG base directory environment variables as defined in:
+# https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.html.
+#
+# Explicitly define them here so we don't need to add the additional code of
+# handling the case where they are not explicitly defined, simplifying the code
+# in the rest of our configurations which use XDG.
+
+# Directory where user-specific data files should be stored.
+export XDG_DATA_HOME="$HOME/.local/share"
+# Preference-ordered set of base directories to search for data files in
+# addition to the $XDG_DATA_HOME base directory.
+export XDG_DATA_DIRS="/usr/local/share/:/usr/share/"
+# Directory where user-specific configuration files should be stored.
+export XDG_CONFIG_HOME="$HOME/.config"
+# Preference-ordered set of base directories to search for configuration files
+# in addition to the $XDG_CONFIG_HOME base directory.
+export XDG_CONFIG_DIRS="/etc/xdg"
+# Directory where user-specific non-essential data files should be stored.
+export XDG_CACHE_HOME="$HOME/.cache"
+
+###############################################################################
+# Update PATH with helpful utilities
+
+# homebrew
+/opt/homebrew/bin/brew shellenv | source
+
+fish_add_path /opt/homebrew/opt/curl/bin # Not installed in default brew bin dir
+fish_add_path /opt/homebrew/opt/coreutils/libexec/gnubin # Use GNU core utils (`ls` etc) instead of macOS ones
+fish_add_path "$HOME/.files/git-helpers"
+
+# fnm
+fnm env --shell fish | source
+
+###############################################################################
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
@@ -20,9 +56,6 @@ set -x PAGER "less"
 
 # Output ANSI control/color sequences
 set -x LESS "--RAW-CONTROL-CHARS"
-
-# homebrew
-/opt/homebrew/bin/brew shellenv | source
 
 if which gpgconf >/dev/null 2>&1
   if not pgrep gpg-agent >/dev/null
@@ -56,6 +89,12 @@ function multicd
     echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
 end
 abbr --add dotdot --regex '^\.\.+$' --function multicd
+
+### edit configs
+abbr -a conf-fish 'nvim ~/.config/fish/config.fish'
+abbr -a conf-nvim 'nvim ~/.config/nvim'
+abbr -a conf-files 'nvim ~/.files'
+abbr -a conf-tmux 'nvim ~/.config/tmux/tmux.conf'
 
 abbr -a v nvim
 
@@ -192,9 +231,6 @@ abbr gswc 'git switch -c'
 abbr gg 'git switch -'
 abbr lg lazygit
 
-# fnm
-fnm env --shell fish | source
-
 # yarn
 abbr -a y yarn
 abbr -a ya yarn add
@@ -223,13 +259,6 @@ fish_add_path $ANDROID_HOME/emulator
 fish_add_path $ANDROID_HOME/platform-tools
 
 fish_add_path -a /Users/deodad/.foundry/bin
-
-# fnm
-set FNM_PATH "/Users/deodad/Library/Application Support/fnm"
-if [ -d "$FNM_PATH" ]
-  set PATH "$FNM_PATH" $PATH
-  fnm env | source
-end
 
 # pnpm
 set -gx PNPM_HOME "/Users/deodad/Library/pnpm"

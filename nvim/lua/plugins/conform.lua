@@ -17,10 +17,11 @@ return {
   ---@module "conform"
   ---@type conform.setupOpts
   opts = {
+    log_level = vim.log.levels.DEBUG,
     -- Define your formatters
     formatters_by_ft = {
       lua = { "stylua" },
-      javascript = { "biome", "prettierd", "prettier", stop_after_first = true },
+      javascript = { "biome", "prettierd", stop_after_first = true },
     },
     -- Set default options
     default_format_opts = {
