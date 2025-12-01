@@ -1,8 +1,13 @@
 return {
-  'tpope/vim-surround',
-  'tpope/vim-commentary',
-  'tpope/vim-eunuch',
   'nvim-tree/nvim-web-devicons',
+  'tpope/vim-surround',
+  {
+    'tpope/vim-fugitive',
+    dependencies = 'tpope/vim-rhubarb',
+    config = function()
+      vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+    end
+  },
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -26,6 +31,5 @@ return {
       vim.opt.termguicolors = true
       vim.cmd.colorscheme 'melange'
     end
-  },
-  { 'dmmulroy/ts-error-translator.nvim' }
+  }
 }

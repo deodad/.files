@@ -27,10 +27,19 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 fish_add_path /opt/homebrew/opt/curl/bin # Not installed in default brew bin dir
 fish_add_path /opt/homebrew/opt/coreutils/libexec/gnubin # Use GNU core utils (`ls` etc) instead of macOS ones
+fish_add_path /opt/homebrew/opt/postgresql@17/bin
 fish_add_path "$HOME/.files/git-helpers"
+fish_add_path "$HOME/.claude/local"
 
 # fnm
 fnm env --shell fish | source
+
+# rust
+source "$HOME/.cargo/env.fish"
+
+# direnv
+direnv hook fish | source
+
 
 ###############################################################################
 
@@ -195,7 +204,9 @@ abbr gplom 'git pull origin (git_main_branch)'
 abbr gplu 'git pull upstream'
 abbr gplum 'git pull upstream (git_main_branch)'
 
+abbr grbbb 'git fetch origin main:main -f && git rebase main'
 abbr grb 'git rebase'
+abbr grbm 'git rebase main'
 abbr grba 'git rebase --abort'
 abbr grbc 'git rebase --continue'
 abbr grbi 'git rebase -i'
@@ -242,6 +253,9 @@ abbr -a p pnpm
 # make
 abbr -a m make
 
+# claude
+abbr -a c 'env SHELL=/bin/bash claude'
+
 # autojump
 [ -f /opt/homebrew/share/autojump/autojump.fish ]; and source /opt/homebrew/share/autojump/autojump.fish
 
@@ -267,9 +281,6 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
-# cluadge
-alias claude="/Users/deodad/.claude/local/claude"
-
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
@@ -279,3 +290,5 @@ if test -e "$HOME/.config/fish/local.fish"
   source "$HOME/.config/fish/local.fish"
 end
 
+
+fish_add_path -a /Users/deodad/.config/.foundry/bin

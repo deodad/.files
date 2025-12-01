@@ -208,6 +208,7 @@ cask ghostty
 cask google-chrome
 cask 1password
 cask raycast
+cask spotify
 cask slack
 cask cloudflare-warp
 cask zulu@17

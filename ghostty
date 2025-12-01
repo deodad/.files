@@ -1,5 +1,5 @@
-font-family = "Berkeley Mono"
-theme = ic_orange_ppl
+font-family = Berkeley Mono
+theme = IC Orange PPL
 macos-non-native-fullscreen = true
 macos-option-as-alt = true
 

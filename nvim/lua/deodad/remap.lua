@@ -6,3 +6,6 @@ vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>go", ":GBrowse<CR>", { desc = "Open current file on GitHub" })
+vim.keymap.set("v", "<leader>go", ":GBrowse<CR>", { desc = "Open selection on GitHub" })
