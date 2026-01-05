@@ -240,7 +240,9 @@ abbr gsts 'git stash save'
 abbr gsw 'git switch'
 abbr gswc 'git switch -c'
 abbr gg 'git switch -'
+
 abbr lg lazygit
+abbr gt 'git trim --no-confirm'
 
 # yarn
 abbr -a y yarn
@@ -292,3 +294,6 @@ end
 
 
 fish_add_path -a /Users/deodad/.config/.foundry/bin
+
+# Amp CLI
+export PATH="/Users/deodad/.amp/bin:$PATH"
