@@ -2,15 +2,23 @@
 
 My dot file configuration, optimized specifically for macOS using the [fish shell](https://fishshell.com/).
 
-After using [zsh](https://zsh.sourceforge.io/) for over a decade, it was time to move on.
-At the time of this decision, a rewrite of fish in Rust is [nearing completion](https://github.com/fish-shell/fish-shell/discussions/10123).
-While that's nice, it's not the main reason.
+## What's Included
 
-The goal with this was simplification:
-- Removed the [Dot framework](https://github.com/deodad/dot) for configuration management since it was overengineered relative to what I personally needed.
-- Fish is much easier to configure than zsh, and has an excellent suite of autocompletions already provided.
-- Migrating from [Vim](https://www.vim.org/) to [Neovim](https://neovim.io/) was on my list for a while, as most activity is happening on Neovim now.
-- Migrating from [iTerm2](https://iterm2.com/) to [Ghostty](https://ghostty.org/), which has fewer knobs to tweak and is seeing much more active development.
+**Configurations** (symlinked to `~/.config/`):
+- Fish shell with [hydro](https://github.com/jorgebucaran/hydro) prompt
+- Neovim
+- Tmux
+- Ghostty terminal
+- Git (with GPG commit signing)
+
+**Tools** (installed via Homebrew):
+- Development: nvim, git, gh, bun, ripgrep, fzf, fd
+- Utilities: bat, eza, zoxide, jq, lazygit, direnv
+- Apps: Ghostty, 1Password, Raycast, Chrome, Slack, Spotify
+
+**Other**:
+- Caps Lock remapped to Left-Ctrl
+- GPG/SSH key generation and configuration
 
 ## Installation
 
@@ -22,8 +30,12 @@ Assuming you're on a brand-new machine, run:
 
 ## Configuration
 
-The `./install` script ensures software we're expecting to be available is installed on the system.
-This includes Homebrew formulae, casks, fish plugins, etc.
-It also creates symlinks from your host back to files in this repository.
-`./install` is meant to be idempotent, so it is safe to run many times.
-When making changes to it, ensure it remains idempotent.
+The `bootstrap.sh` script handles first-time setup: it installs Homebrew, clones this repo, and runs `./install`.
+
+The `./install` script can be run independently to update an existing setup. It:
+- Installs Homebrew formulae, casks, and fish plugins
+- Creates symlinks from `~/.config/` to this repository
+- Sets fish as the default shell
+- Generates GPG/SSH keys if none exist
+
+Both scripts are idempotent and safe to run multiple times.
