@@ -192,8 +192,9 @@ formula nvim
 formula prettierd
 formula tmux
 formula bun
-formula autojump
-formula lsd
+formula zoxide
+formula eza
+formula jq
 formula gh
 formula lazygit
 formula ripgrep

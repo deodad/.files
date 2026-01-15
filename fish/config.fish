@@ -112,9 +112,10 @@ abbr -a v nvim
 abbr -a ta tmux attach
 abbr -a td tmux detach
 
-# lsd
-abbr -a ls lsd
-abbr -a lsa lsd -lah
+# eza
+abbr -a ls eza
+abbr -a lsa 'eza -lah'
+abbr -a lt 'eza --tree'
 
 # git
 function git_main_branch -d 'Detect name of main branch of current git repository'
@@ -259,8 +260,8 @@ abbr -a m make
 # claude
 abbr -a c 'env SHELL=/bin/bash claude'
 
-# autojump
-[ -f /opt/homebrew/share/autojump/autojump.fish ]; and source /opt/homebrew/share/autojump/autojump.fish
+# zoxide
+zoxide init fish | source
 
 # mobile dev
 abbr dl 'xcrun simctl openurl booted'
