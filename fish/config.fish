@@ -30,6 +30,7 @@ fish_add_path /opt/homebrew/opt/coreutils/libexec/gnubin # Use GNU core utils (`
 fish_add_path /opt/homebrew/opt/postgresql@17/bin
 fish_add_path "$HOME/.files/git-helpers"
 fish_add_path "$HOME/.claude/local"
+fish_add_path "$HOME/.local/bin"
 
 # fnm
 fnm env --shell fish | source
@@ -297,3 +298,6 @@ fish_add_path -a /Users/deodad/.config/.foundry/bin
 
 # Amp CLI
 export PATH="/Users/deodad/.amp/bin:$PATH"
+
+# Created by `pipx` on 2026-01-13 20:41:33
+set PATH $PATH /Users/deodad/.local/bin
