@@ -1,0 +1,11 @@
+[include]
+    path = config.local
+
+[pull]
+    rebase = true
+
+[push]
+    autoSetupRemote = true
+
+[gpg]
+    program = gpg

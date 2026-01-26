@@ -198,6 +198,8 @@ formula jq
 formula gh
 formula lazygit
 formula ripgrep
+formula fnm
+formula postgresql@17
 formula pgcli
 formula orbstack
 formula cloudflared
@@ -216,6 +218,7 @@ cask zulu@17
 cask bartender
 cask cleanshot
 cask istat-menus
+cask zoom
 
 symlink "$HOME/.gnupg/gpg-agent.conf" "$script_dir/gpg-agent.conf"
 symlink "$HOME/.hushlogin" "$script_dir/hushlogin"

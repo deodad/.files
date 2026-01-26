@@ -260,6 +260,9 @@ abbr -a m make
 # claude
 abbr -a c 'env SHELL=/bin/bash claude'
 
+# amp
+abbr -a a amp
+
 # zoxide
 zoxide init fish | source
 
