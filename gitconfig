@@ -1,5 +1,12 @@
-[include]
-    path = config.local
+[user]
+    name = Tony D'Addeo
+    email = amdaddeo@gmail.com
+
+[commit]
+    gpgsign = true
+
+[tag]
+    gpgsign = true
 
 [pull]
     rebase = true
