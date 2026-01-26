@@ -1,5 +1,4 @@
 font-family = Berkeley Mono
 theme = IC Orange PPL
 macos-non-native-fullscreen = true
-macos-option-as-alt = true
-
+macos-option-as-alt = left
